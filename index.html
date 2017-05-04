@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head> 
+<body>
+	<div id="box">
+	  <div id="header" >
+	  
+	  </div>
+	  <div id="container"> 
+
+		<div id="kiri">
+<marquee bgcolor="#red" style="color:yellow;font-family:Baskerville Old Face; font-size:50px;">Kondisi Cuaca Universitas di Kota Semarang</marquee>
+
+
+
+
+
+<h4>UNIVERSITAS NEGERI SEMARANG</h4>
+
+<div id ="weather"></div>
+	<p>Temperature: <span id="temp"><span><p>
+	<p>Wind Speed: <span id="wind"><span><p>
+
+
+<script>
+var weather = new XMLHttpRequest();
+weather.open("GET","http://api.wunderground.com/api/6f897de90ef6a741/conditions/q/CA/GunungPati.json", false);
+weather.send(null);
+
+var r = JSON.parse(weather.response);
+var weather = "Current location: "+ r.current_observation.display_location.full + "<br />";
+var temp = r.current_observation.temperature_string + "<br />";
+var wind = r.current_observation.wind_string + "<br />";
+
+document.getElementById("weather").innerHTML = weather;
+document.getElementById("temp").innerHTML = temp;
+document.getElementById("wind").innerHTML = wind;
+
+</script>
+
+<br> </br>
+<div id ="weather"></div>
+	<p>Temperature: <span id="temp"><span><p>
+	<p>Wins Speed: <span id="wind"><span><p>
+
+<script>
+var weather = new XMLHttpRequest();
+weather.open("GET","http://api.wunderground.com/api/6f897de90ef6a741/conditions/q/CA/GunungPati.json", false);
+weather.send(null);
+
+var r = JSON.parse(weather.response);
+var weather = "Current location: "+ r.current_observation.display_location.full + "<br />";
+var temp = r.current_observation.temperature_string + "<br />";
+var wind = r.current_observation.wind_string + "<br />";
+
+document.getElementById("weather").innerHTML = weather;
+document.getElementById("temp").innerHTML = temp;
+document.getElementById("wind").innerHTML = wind;
+
+</script>	
+
+			</div>
+		<div class="clear"></div>
+	  </div> 
+	  <div id="footer">
+		<div id="copyright">
+		<b style="font-family:Baskerville Old Face; font-size:30px;"> Nama  :  Ahmad Yusuf----NIM  :  15.01.53.0133---Web Service</b></div> 
+		<div id="copyright">Copyright@2017 by yusuf</div> 
+	  </div>
+	</div>
+</body> 
+</html>
